@@ -5,35 +5,7 @@
 <body>
 	<h2>Modify Planets Record</h2>
 
-	<%= form_for :planet, url: planet_path(@planet), method: :patch do |f| %>
-
-		<% if @planet.errors.any? %>
-		<div id="error_explanation">
-			<h3>
-				<%= pluralize(@planet.errors.count, "error") %> prevented storing this planet:
-			</h3>
-			<ul>
-				<% @planet.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-		<% end %>
-
-	  <p>
-	    <%= f.label :name %><br />
-	    <%= f.text_field :name %>
-	  </p>
-	 
-	  <p>
-	    <%= f.label :diameter %><br>
-	    <%= f.text_field :diameter %>
-	  </p>
-	 
-	  <p>
-	    <%= f.submit %>
-	  </p>
-	<% end %>
+	<%= render 'form' %>
 
 	<%= link_to 'Back to Planet Index', planets_path %>
 </body>
