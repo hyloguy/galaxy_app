@@ -15,6 +15,16 @@
 	  <%= @planet.diameter %>
 	</p>
 
+	<p>
+	  <strong>Record created:</strong>
+	  <%= @planet.created_at.strftime("%I:%M:%S%p on %m/%d/%Y") %>
+	</p>
+
+	<p>
+	  <strong>Record last modified:</strong>
+	  <%= @planet.updated_at.strftime("%I:%M:%S%p on %m/%d/%Y") %>
+	</p>
+
 	<%= link_to 'Edit this planet record', edit_planet_path(@planet) %>
 	| <%= link_to 'Return to Planet Index', planets_path %>
 </body>
