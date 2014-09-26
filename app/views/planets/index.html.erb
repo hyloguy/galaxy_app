@@ -13,7 +13,11 @@
 	 
 	  <% @planets.each do |planet| %>
 	    <tr>
-	      <td><%= link_to planet.name, planet %></td>
+	    	<% if planet.diameter > 10000 %>
+	      	<td><strong><%= link_to planet.name, planet %></strong></td>
+	      <% else %>
+	      	<td><%= link_to planet.name, planet %></td>
+	      <% end %>
 	      <td><%= planet.diameter %></td>
 	      <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
 	      <td>
