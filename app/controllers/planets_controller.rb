@@ -1,7 +1,7 @@
 class PlanetsController < ApplicationController
 
   def index
-  	@planets = Planet.all
+  	@planets = Planet.order(:name)
   end
 
   def new
