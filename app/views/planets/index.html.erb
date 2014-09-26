@@ -5,6 +5,22 @@
 <body>
 	<h2>List of Planets</h2>
 
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Diameter</th>
+	  </tr>
+	 
+	  <% @planets.each do |planet| %>
+	    <tr>
+	      <td><%= link_to planet.name, planet %></td>
+	      <td><%= planet.diameter %></td>
+	    </tr>
+	  <% end %>
+	</table>
+
+	<p></p>
+
 	<%= link_to 'Add new planet', new_planet_path %>
 </body>
 </html>

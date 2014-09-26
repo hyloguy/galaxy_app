@@ -5,6 +5,16 @@
 <body>
 	<h2>Planet Information</h2>
 
+	<p>
+	  <strong>Name:</strong>
+	  <%= @planet.name %>
+	</p>
+	 
+	<p>
+	  <strong>Diameter:</strong>
+	  <%= @planet.diameter %>
+	</p>
+
 	<%= link_to 'Back to Planet Index', planets_path %>
 </body>
 </html>
