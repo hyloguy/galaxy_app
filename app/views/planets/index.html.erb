@@ -3,36 +3,50 @@
 	<title>List of Planets</title>
 </head>
 <body>
-	<h2>List of Planets</h2>
 
-	<table>
-	  <tr>
-	    <th>Name</th>
-	    <th>Diameter</th>
-	  </tr>
-	 
-	  <% @planets.each do |planet| %>
-	    <tr>
-	    	<% if planet.diameter > 10000 %>
-	      	<td><strong><%= link_to planet.name, planet %></strong></td>
-	      <% else %>
-	      	<td><%= link_to planet.name, planet %></td>
-	      <% end %>
-	      <td><%= planet.diameter %></td>
-	      <td><%= button_to 'Edit', edit_planet_path(planet), method: :get %></td>
-	      <td>
-	      	<%= button_to 'Delete', planet, method: :delete,
-	      				data: { confirm: "Are you sure you want to delete #{planet.name}?" } %>
-	      </td>
-	      <td>
-	      	<%= button_to 'Copy', { action: "copy", id: planet.id } %>
-	      </td>
-	    </tr>
-	  <% end %>
-	</table>
+	<section class="container">
+		<h2>List of Planets</h2>
+		<table class="table table-striped">
+			<thead>
+			  <tr>
+			    <th class="col-md-3">Image</th>
+			    <th class="col-md-3">Diameter</th>
+			    <th class="col-md-3">Name</th>
+			    <th class="col-md-1"></th>
+			    <th class="col-md-1"></th>
+			    <th class="col-md-1"></th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <% @planets.each do |planet| %>
+			    <tr>
+			    	<td>()</td>
+			    	<% if planet.diameter > 10000 %>
+			      	<td><strong><%= link_to planet.name, planet %></strong></td>
+			      <% else %>
+			      	<td><%= link_to planet.name, planet %></td>
+			      <% end %>
+			      <td><%= planet.diameter %></td>
+			      <td><%= link_to 'Edit', edit_planet_path(planet),
+			      				:class => 'btn btn-mini btn-success' %></td>
+			      <td><%= link_to 'Copy',
+			      				{ action: "copy", id: planet.id },
+			      				method: :post,
+			      				:class => 'btn btn-mini btn-warning' %></td>
+			      <td>
+			      	<%= link_to 'Delete', planet, method: :delete,
+			      				data: { confirm: "Are you sure you want to delete #{planet.name}?" },
+			      				:class => 'btn btn-mini btn-danger' %>
+			      </td>
+			    </tr>
+			  <% end %>
+		  </tbody>
+		</table>
+	</section>
 
-	<p></p>
+	<section>
+	<%= link_to 'Add new planet', new_planet_path, class: "btn btn-large btn-primary" %>
+	</section>
 
-	<%= link_to 'Add new planet', new_planet_path %>
 </body>
 </html>
