@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'planets/index'
+
+  get 'planets/new'
+
+  get 'planets/show'
+
+  get 'planets/edit'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
