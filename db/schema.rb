@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926230752) do
+ActiveRecord::Schema.define(version: 20140926235034) do
 
   create_table "planets", force: true do |t|
     t.string   "name"
     t.integer  "diameter"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "orbit"
+    t.integer  "star_system_id"
   end
+
+  add_index "planets", ["star_system_id"], name: "index_planets_on_star_system_id"
 
   create_table "star_systems", force: true do |t|
     t.string   "name"
