@@ -5,6 +5,7 @@ class PlanetsController < ApplicationController
   end
 
   def new
+  	@planet = Planet.new
   end
 
   def show
@@ -15,8 +16,13 @@ class PlanetsController < ApplicationController
   end
 
   def create
-  	@planet = Planet.create(planet_params)
-  	redirect_to planets_path
+  	@planet = Planet.new(planet_params)
+
+  	if @planet.save
+  		redirect_to planets_path
+  	else
+  		render 'new'
+  	end
   end
 
   private

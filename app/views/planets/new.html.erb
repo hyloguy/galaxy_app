@@ -6,13 +6,27 @@
 	<h2>Add new planet</h2>
 
 	<%= form_for :planet, url: planets_path do |f| %>
+
+		<% if @planet.errors.any? %>
+		<div id="error_explanation">
+			<h3>
+				<%= pluralize(@planet.errors.count, "error") %> prevented storing this planet:
+			</h3>
+			<ul>
+				<% @planet.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+
 	  <p>
-	    <%= f.label :name %><br>
+	    <%= f.label :name %><br />
 	    <%= f.text_field :name %>
 	  </p>
 	 
 	  <p>
-	    <%= f.label :diameter %><br>
+	    <%= f.label :diameter %>
 	    <%= f.text_field :diameter %>
 	  </p>
 	 
