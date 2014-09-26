@@ -15,6 +15,7 @@
 	    <tr>
 	      <td><%= link_to planet.name, planet %></td>
 	      <td><%= planet.diameter %></td>
+	      <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
 	    </tr>
 	  <% end %>
 	</table>

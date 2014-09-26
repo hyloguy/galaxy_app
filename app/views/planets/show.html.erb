@@ -15,6 +15,7 @@
 	  <%= @planet.diameter %>
 	</p>
 
-	<%= link_to 'Back to Planet Index', planets_path %>
+	<%= link_to 'Edit this planet record', edit_planet_path(@planet) %>
+	| <%= link_to 'Return to Planet Index', planets_path %>
 </body>
 </html>

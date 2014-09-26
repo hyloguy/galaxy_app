@@ -13,6 +13,7 @@ class PlanetsController < ApplicationController
   end
 
   def edit
+  	@planet = Planet.find(params[:id])
   end
 
   def create
@@ -22,6 +23,16 @@ class PlanetsController < ApplicationController
   		redirect_to planets_path
   	else
   		render 'new'
+  	end
+  end
+
+  def update
+  	@planet = Planet.find(params[:id])
+
+  	if @planet.update(planet_params)
+  		redirect_to @planet
+  	else
+  		render 'edit'
   	end
   end
 
