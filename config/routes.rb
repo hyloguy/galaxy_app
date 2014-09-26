@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   get 'home/index'
-  resources :planets
+
+  resources :planets do
+  	post 'copy', on: :member
+  end
+
   root 'planets#index'
 
 end

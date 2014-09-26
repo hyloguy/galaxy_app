@@ -42,6 +42,16 @@ class PlanetsController < ApplicationController
   	redirect_to planets_path
   end
 
+  def copy
+  	original = Planet.find(params[:id])
+  	copy = Planet.new do |p|
+  		p.name = original.name + " copy"
+  		p.diameter = original.diameter
+  	end
+  	copy.save
+  	redirect_to planets_path
+  end
+
   private
 
   def planet_params
