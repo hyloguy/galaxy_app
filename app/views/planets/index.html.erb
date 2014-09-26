@@ -19,10 +19,10 @@
 	      	<td><%= link_to planet.name, planet %></td>
 	      <% end %>
 	      <td><%= planet.diameter %></td>
-	      <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
+	      <td><%= button_to 'Edit', edit_planet_path(planet), method: :get %></td>
 	      <td>
-	      	<%= link_to 'Delete', planet, method: :delete,
-	      				data: { confirm: 'Are you sure?' } %>
+	      	<%= button_to 'Delete', planet, method: :delete,
+	      				data: { confirm: "Are you sure you want to delete #{planet.name}?" } %>
 	      </td>
 	      <td>
 	      	<%= button_to 'Copy', { action: "copy", id: planet.id } %>
