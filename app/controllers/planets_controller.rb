@@ -55,7 +55,7 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-  	params.require(:planet).permit(:name, :diameter)
+  	params.require(:planet).permit(:name, :diameter, :orbit, :star_system_id)
   end
 
 end

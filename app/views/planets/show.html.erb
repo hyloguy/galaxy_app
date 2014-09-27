@@ -1,8 +1,4 @@
-<html>
-<head>
-	<title>Planet Information</title>
-</head>
-<body>
+<section class="container">
 	<h2>Planet Information</h2>
 
 	<p>
@@ -16,6 +12,16 @@
 	</p>
 
 	<p>
+	  <strong>Star System:</strong>
+	  <%= @planet.star_system.name %>
+	</p>
+
+	<p>
+	  <strong>Orbital Position:</strong>
+	  <%= @planet.orbit %>
+	</p>
+
+	<p>
 	  <strong>Record created:</strong>
 	  <%= @planet.created_at.getlocal.strftime("%I:%M:%S%p on %m/%d/%Y") %>
 	</p>
@@ -24,8 +30,10 @@
 	  <strong>Record last modified:</strong>
 	  <%= @planet.updated_at.getlocal.strftime("%I:%M:%S%p on %m/%d/%Y") %>
 	</p>
-
-	<%= link_to 'Edit this planet record', edit_planet_path(@planet) %>
-	| <%= link_to 'Return to Planet Index', planets_path %>
-</body>
-</html>
+</section>
+<section class="container">
+	<%= link_to 'Edit this planet record', edit_planet_path(@planet),
+						:class => 'btn btn-mini btn-default' %>
+	<%= link_to 'Return to Planet Index', planets_path,
+						:class => 'btn btn-mini btn-default' %>
+</section>

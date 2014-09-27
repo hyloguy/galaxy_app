@@ -24,6 +24,18 @@
   </p>
  
   <p>
+    <%= f.label :orbit %><br>
+    <%= f.text_field :orbit %>
+  </p>
+ 
+  <p>
+    <%= f.label :star_system %><br>
+    <%= f.select :star_system_id,
+    						StarSystem.all.collect {|s| [ s.name, s.id ] },
+    						prompt: 'Select Star System' %>
+  </p>
+ 
+  <p>
     <%= f.submit %>
   </p>
 <% end %>

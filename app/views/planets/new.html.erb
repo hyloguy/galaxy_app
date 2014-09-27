@@ -1,12 +1,9 @@
-<html>
-<head>
-	<title>Add new planet</title>
-</head>
-<body>
+<section class="container">
 	<h2>Add new planet</h2>
 
 	<%= render 'form' %>
+</section>
 
-	<%= link_to 'Back to Planet Index', planets_path %>
-</body>
-</html>
+<section class="container">
+	<%= link_to 'Back to Planet Index', planets_path, :class => 'btn btn-mini btn-default' %>
+</section>
