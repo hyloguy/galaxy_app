@@ -13,29 +13,48 @@
 	</div>
 	<% end %>
 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.label :diameter %><br>
-    <%= f.text_field :diameter %>
-  </p>
- 
-  <p>
-    <%= f.label :orbit %><br>
-    <%= f.text_field :orbit %>
-  </p>
- 
-  <p>
-    <%= f.label :star_system %><br>
-    <%= f.select :star_system_id,
-    						StarSystem.all.collect {|s| [ s.name, s.id ] },
-    						prompt: 'Select Star System' %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
+	<div class="row">
+	  <div class="field form-group">
+	    <%= f.label "Planet Name", :class => 'col-sm-2 control-label' %>
+	    <div class="col-sm-7">
+	    	<%= f.text_field :name, :class => 'form-control' %>
+	    </div>
+	  </div>
+  </div>
+	<div class="row">
+	  <div class="field form-group">
+	    <%= f.label "Diameter (km)",
+	    						:class => 'col-sm-2 control-label' %>
+	    <div class="col-sm-3">
+	    	<%= f.text_field :diameter, :class => 'form-control' %>
+	    </div>
+	  </div>
+  </div>
+	<div class="row">
+	  <div class="field form-group">
+	    <%= f.label "Orbital Position",
+	    						:class => 'col-sm-2 control-label' %>
+	    <div class="col-sm-3">
+	    	<%= f.text_field :orbit, :class => 'form-control' %>
+	    </div>
+	  </div>
+  </div>
+	<div class="row">
+	  <div class="field form-group">
+	    <%= f.label :star_system, :class => 'col-sm-2 control-label' %>
+	    <div class="col-sm-3">
+	    	<%= f.select :star_system_id,
+	    							StarSystem.all.collect {|s| [ s.name, s.id ] },
+	    							prompt: 'Select Star System',
+	    							:class => 'form-control' %>
+	    </div>
+	  </div>
+  </div>
+	<div class="row">
+	  <div class="actions form-group">
+	    <div class="col-sm-offset-2 col-sm-3">
+	    	<%= f.submit %>
+	    </div>
+	  </div>
+  </div>
 <% end %>

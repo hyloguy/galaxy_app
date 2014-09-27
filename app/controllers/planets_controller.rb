@@ -1,7 +1,8 @@
 class PlanetsController < ApplicationController
 
   def index
-  	@planets = Planet.order(:name)
+  	# @planets = Planet.all
+    @star_systems = StarSystem.all
   end
 
   def new
@@ -47,6 +48,8 @@ class PlanetsController < ApplicationController
   	copy = Planet.new do |p|
   		p.name = original.name + " copy"
   		p.diameter = original.diameter
+      p.orbit = original.orbit
+      p.star_system_id = original.star_system_id
   	end
   	copy.save
   	redirect_to planets_path
