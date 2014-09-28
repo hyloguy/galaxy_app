@@ -1,5 +1,10 @@
-<h1>New star_system</h1>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Star Systems', star_systems_path %></li>
+  <li class="active"><%= link_to 'Add New Star System', new_star_system_path %></li>
+</ul>
 
-<%= render 'form' %>
+<section class="container">
+	<h2>Add new star system</h2>
 
-<%= link_to 'Back', star_systems_path %>
+	<%= render 'form' %>
+</section>
