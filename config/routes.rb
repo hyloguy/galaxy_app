@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   resources :star_systems
 
   get 'home/index'
