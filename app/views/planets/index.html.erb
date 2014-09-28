@@ -1,3 +1,8 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to 'View Planets', planets_path %></li>
+  <li><%= link_to 'Add new planet', new_planet_path %></li>
+</ul>
+
 <section class="container">
 	<h2>List of Planets by Star System</h2>
 	<% @star_systems.each do |star| %>
@@ -44,8 +49,4 @@
 			</div>
 		</div>
 	<% end %>
-</section>
-
-<section class="container">
-<%= link_to 'Add new planet', new_planet_path, class: "btn btn-large btn-primary" %>
 </section>

@@ -1,9 +1,10 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Planets', planets_path %></li>
+  <li class="active"><%= link_to 'Add new planet', new_planet_path %></li>
+</ul>
+
 <section class="container">
 	<h2>Add new planet</h2>
 
 	<%= render 'form' %>
-</section>
-
-<section class="container">
-	<%= link_to 'Back to Planet Index', planets_path, :class => 'btn btn-mini btn-default' %>
 </section>

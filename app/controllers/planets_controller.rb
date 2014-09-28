@@ -1,7 +1,6 @@
 class PlanetsController < ApplicationController
 
   def index
-  	# @planets = Planet.all
     @star_systems = StarSystem.all
   end
 
