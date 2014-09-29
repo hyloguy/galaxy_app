@@ -1,28 +1,20 @@
-== README
+== InterstellaReddit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Was planned to be a Reddit clone for the interstellar community.
 
-Things you may want to cover:
+* Posts (not yet implemented)
 
-* Ruby version
+* Comments/Replies (not yet implemented)
 
-* System dependencies
+* Users
 
-* Configuration
+* User Authentication (not yet implemented)
 
-* Database creation
+* Planets (Every User has a home planet)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Star Systems
 
 * ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Just run <tt>bundler</tt>, then run <tt>bin/rails server</tt> and you should be good to go.
