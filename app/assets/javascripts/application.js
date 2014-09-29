@@ -15,3 +15,11 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+// function init() {
+// 	setActiveMenuItem();
+// 	var hylo_main_menu = document.getElementById('hylo_main_menu');
+// 	hylo_main_menu.addEventListener("click", setActiveMenuItemForThis, false);
+// }
+
+// window.onload = init;
