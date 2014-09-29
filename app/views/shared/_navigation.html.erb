@@ -15,16 +15,9 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav" id="hylo_main_menu"
-          controller="<%= controller_name %>">
-        <li class="active" id="planets" role="tab"
-          data-toggle="tab" data-target="#" href="<%= planets_path %>">
-          <%= link_to 'Planets', planets_path %>
-        </li>
-        <li id="star_systems" role="tab"
-            data-toggle="tab" data-target="#" href="<%= star_systems_path %>">
-          <%= link_to 'Star Systems', star_systems_path %>
-        </li>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to 'Planets', planets_path %></li>
+        <li><%= link_to 'Star Systems', star_systems_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
