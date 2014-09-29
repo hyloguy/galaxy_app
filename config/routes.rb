@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :users
 	resources :posts
 
+	get 'login/create'
+	get 'login/destroy'
+
 end
