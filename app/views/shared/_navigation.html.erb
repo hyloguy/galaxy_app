@@ -17,10 +17,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Posts', posts_path %></li>
-        <li><%= link_to 'Users', users_path %></li>
-        <li class="active"><%= link_to 'Planets', planets_path %></li>
-        <li><%= link_to 'Star Systems', star_systems_path %></li>
+        <li class=<%= 'active' if controller_name == 'posts' %>><%= link_to 'Posts', posts_path %></li>
+        <li class=<%= 'active' if controller_name == 'users' %>><%= link_to 'Users', users_path %></li>
+        <li class=<%= 'active' if controller_name == 'planets' %>><%= link_to 'Planets', planets_path %></li>
+        <li class=<%= 'active' if controller_name == 'star_systems' %>>
+          <%= link_to 'Star Systems', star_systems_path %>
+        </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
