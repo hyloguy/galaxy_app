@@ -1,6 +1,12 @@
-<h1>Editing star_system</h1>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Star Systems', star_systems_path %></li>
+  <li class="active">
+  	<%= link_to 'Edit this star system record', edit_star_system_path(@star_system) %>
+  </li>
+</ul>
 
-<%= render 'form' %>
+<section class="container">
+	<h2>Modify Star System Record</h2>
 
-<%= link_to 'Show', @star_system %> |
-<%= link_to 'Back', star_systems_path %>
+	<%= render 'form' %>
+</section>

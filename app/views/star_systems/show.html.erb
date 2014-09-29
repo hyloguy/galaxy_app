@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Star Systems', star_systems_path %></li>
+  <li>
+  	<%= link_to 'Edit this star system record', edit_star_system_path(@star_system) %>
+  </li>
+</ul>
 
-<p>
-  <strong>Name:</strong>
-  <%= @star_system.name %>
-</p>
+<section class="container">
+	<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_star_system_path(@star_system) %> |
-<%= link_to 'Back', star_systems_path %>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @star_system.name %>
+	</p>
+</section>

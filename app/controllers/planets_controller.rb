@@ -20,7 +20,7 @@ class PlanetsController < ApplicationController
   	@planet = Planet.new(planet_params)
 
   	if @planet.save
-  		redirect_to planets_path
+  		redirect_to planets_path, notice: 'Planet was successfully created.'
   	else
   		render 'new'
   	end
@@ -30,7 +30,7 @@ class PlanetsController < ApplicationController
   	@planet = Planet.find(params[:id])
 
   	if @planet.update(planet_params)
-  		redirect_to @planet
+  		redirect_to @planet, notice: 'Planet was successfully updated.'
   	else
   		render 'edit'
   	end

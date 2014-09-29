@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'User List', users_path %></li>
+  <li>
+  	<%= link_to 'Edit this user record', edit_user_path(@user) %>
+  </li>
+</ul>
 
-<p>
-  <strong>Handle:</strong>
-  <%= @user.handle %>
-</p>
+<section class="container">
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+	<p>
+	  <strong>Handle:</strong>
+	  <%= @user.handle %>
+	</p>
 
-<p>
-  <strong>Planet:</strong>
-  <%= @user.planet %>
-</p>
+	<p>
+	  <strong>Password:</strong>
+	  (hidden)
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<p>
+	  <strong>Planet:</strong>
+	  <%= @user.planet.name %>
+	</p>
+
+</section>

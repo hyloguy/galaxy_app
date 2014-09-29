@@ -1,6 +1,14 @@
-<h1>Editing user</h1>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'User List', users_path %></li>
+  <li class="active">
+  	<%= link_to 'Edit this user record', edit_user_path(@user) %>
+  </li>
+</ul>
 
-<%= render 'form' %>
+<section class="container">
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+	<h2>Edit user</h2>
+
+	<%= render 'form' %>
+
+</section>

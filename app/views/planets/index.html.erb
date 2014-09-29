@@ -4,17 +4,19 @@
 </ul>
 
 <section class="container">
+	<p id="notice"><%= notice %></p>
 	<h2>List of Planets by Star System</h2>
 	<% @star_systems.each do |star| %>
 		<h4><%= star.name %> System:</h4>
 		<div class="row">
-			<div class="col-md-9 col-md-offset-3">
+			<div class="col-md-11 col-md-offset-1">
 				<table class="table table-striped">
 					<thead>
 					  <tr>
 					    <th class="col-md-2">Name</th>
 					    <th class="col-md-2">Diameter</th>
-					    <th class="col-md-2">Orbital Position</th>
+					    <th class="col-md-2">Orbit</th>
+					    <th class="col-md-2">Users</th>
 					    <th class="col-md-1"></th>
 					    <th class="col-md-1"></th>
 					    <th class="col-md-1"></th>
@@ -23,6 +25,7 @@
 					<tbody>
 					  <% star.planets.each do |planet| %>
 					    <tr>
+					    	<% #binding.pry if planet.name == "Mars" %>
 					    	<% if planet.diameter > 10000 %>
 					      	<td><strong><%= link_to planet.name, planet %></strong></td>
 					      <% else %>
@@ -30,16 +33,17 @@
 					      <% end %>
 					      <td><%= planet.diameter %></td>
 					      <td><%= planet.orbit %></td>
+					      <td><%= User.where(planet: planet).count %></td>
 					      <td><%= link_to 'Edit', edit_planet_path(planet),
-					      				:class => 'btn btn-mini btn-success' %></td>
+					      				:class => 'btn btn-default btn-xs' %></td>
 					      <td><%= link_to 'Copy',
 					      				{ action: "copy", id: planet.id },
 					      				method: :post,
-					      				:class => 'btn btn-mini btn-warning' %></td>
+					      				:class => 'btn btn-default btn-xs' %></td>
 					      <td>
 					      	<%= link_to 'Delete', planet, method: :delete,
 					      				data: { confirm: "Are you sure you want to delete #{planet.name}?" },
-					      				:class => 'btn btn-mini btn-danger' %>
+					      				:class => 'btn btn-danger btn-xs' %>
 					      </td>
 					    </tr>
 					  <% end %>
