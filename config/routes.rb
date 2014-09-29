@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :users
+  get 'home/index'
+  root 'home#index'
 
   resources :star_systems
-
-  get 'home/index'
 
   resources :planets do
   	post 'copy', on: :member
   end
 
-  root 'home#index'
+  resources :users
+	resources :posts
 
 end
