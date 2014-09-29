@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   	post 'copy', on: :member
   end
 
-  resources :users
+  resources :users do
+  	post 'login', on: :member
+  end
+
 	resources :posts
 
 	get 'login/create'
