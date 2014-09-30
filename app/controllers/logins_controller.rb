@@ -10,6 +10,10 @@ class LoginsController < ApplicationController
       # Save the user ID in the session so it can be used in
       # subsequent requests
       session[:current_user_id] = @user.id
+      flash[:success] = 'You have been successfully logged in.'
+      redirect_to root_path
+    else
+      flash[:danger] = 'Login Failed!'
       redirect_to root_path
     end
   end
@@ -18,6 +22,7 @@ class LoginsController < ApplicationController
   def destroy
     # Remove the user id from the session
     @_current_user = session[:current_user_id] = nil
+    flash[:success] = 'You have been successfully logged out.'
     redirect_to root_path
   end
   
