@@ -1,5 +1,6 @@
 class StarSystemsController < ApplicationController
   before_action :set_star_system, only: [:show, :edit, :update, :destroy]
+  before_action :current_user
 
   # GET /star_systems
   # GET /star_systems.json

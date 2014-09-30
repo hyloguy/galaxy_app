@@ -33,7 +33,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if session[:current_user_id] %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= @_current_user.handle %> <span class="caret"></span>
+            </a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Settings</a></li>
               <li><a href="#">My Profile</a></li>
@@ -58,18 +60,30 @@
   <!-- Modal -->
   <div class="modal fade" id="login-form" tabindex="-1" role="dialog" aria-labelledby="login-form-label" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+
+      <%= form_tag logins_path, {role: 'form', :class => "modal-content"} do %>
         <div class="modal-header">
           <h4 class="modal-title" id="login-form-label">
             Sign in to InsterstellaReddit
           </h4>
         </div>
         <div class="modal-body">
-          Form goes here!
+          <div class="field form-group">
+              <%= label_tag :handle, nil, :class => 'control-label' %>
+              <%= text_field_tag :handle, nil, :class => 'form-control' %>
+          </div>
+          <div class="field form-group">
+              <%= label_tag :password, nil, :class => 'control-label' %>
+              <%= text_field_tag :password, nil, :class => 'form-control' %>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <div class="actions form-group">
+              <%= submit_tag nil, :class => "btn btn-primary" %>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
         </div>
-      </div>
+      <% end %>
+
     </div>
   </div>

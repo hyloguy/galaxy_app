@@ -1,15 +1,16 @@
 class LoginsController < ApplicationController
 
-  # THE CODE BELOW IS ADDED FROM:
+  # THE CODE BELOW IS MODDED FROM:
   # http://guides.rubyonrails.org/action_controller_overview.html
 
   # "Create" a login, aka "log the user in"
   def create
-    if user = User.authenticate(params[:username], params[:password])
+    @user = User.find_by :handle => params[:handle]
+    if @user.authenticate params[:password]
       # Save the user ID in the session so it can be used in
       # subsequent requests
-      session[:current_user_id] = user.id
-      redirect_to root_url
+      session[:current_user_id] = @user.id
+      redirect_to root_path
     end
   end
 
@@ -17,7 +18,7 @@ class LoginsController < ApplicationController
   def destroy
     # Remove the user id from the session
     @_current_user = session[:current_user_id] = nil
-    redirect_to root_url
+    redirect_to root_path
   end
   
 end

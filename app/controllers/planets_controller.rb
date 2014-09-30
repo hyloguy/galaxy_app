@@ -1,4 +1,5 @@
 class PlanetsController < ApplicationController
+  before_action :current_user
 
   def index
     @star_systems = StarSystem.all

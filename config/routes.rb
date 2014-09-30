@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
 	resources :posts
 
-	get 'login/create'
-	get 'login/destroy'
+	post 'logins' => 'logins#create'
+	# get 'login/create'
+	# get 'login/destroy'
 
 end
