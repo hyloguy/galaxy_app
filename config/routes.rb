@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 	resources :posts
 
 	post 'logins' => 'logins#create'
+  get 'logins' => 'logins#destroy'
 	# get 'login/create'
 	# get 'login/destroy'
 
